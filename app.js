@@ -32,7 +32,6 @@ app.use("/api/post", postRouter);
 app.use("/api/like", likeRouter);
 app.use("/api/comment", commentRouter);
 
-let post = process.env.PORT || 3000;
-app.listen(port,function(){
+app.listen(process.env.PORT || 3000,function(){
     console.log("server started!!");
 })
