@@ -34,9 +34,6 @@ app.use("/api/post", postRouter);
 app.use("/api/like", likeRouter);
 app.use("/api/comment", commentRouter);
 
-app.get("/", (req, res) =>{
-    res.send("<h1>hello world !!</h1>");
-})
 
 app.listen(process.env.PORT || 3000,function(){
     
