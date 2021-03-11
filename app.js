@@ -9,7 +9,8 @@ const commentRouter = require("./router/commentRouter");
 let cookie = require("cookie-session");
 const passport = require("passport");
 
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const { response } = require("express");
 
 app.use(cookie({
     maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -19,6 +20,7 @@ app.use(cookie({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.send()
 
 app.use(express.json());
 
@@ -32,6 +34,11 @@ app.use("/api/post", postRouter);
 app.use("/api/like", likeRouter);
 app.use("/api/comment", commentRouter);
 
+app.get("/", (req, res) =>{
+    res.send("<h1>hello world !!</h1>");
+})
+
 app.listen(process.env.PORT || 3000,function(){
+    
     console.log("server started!!");
 })
