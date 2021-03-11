@@ -20,7 +20,6 @@ app.use(cookie({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.send()
 
 app.use(express.json());
 
